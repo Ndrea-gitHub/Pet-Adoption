@@ -1,0 +1,51 @@
+body{
+    background-color: #9EC6F3;
+}
+
+button{
+    margin-top:2%;
+    margin-left: 4%;
+    margin-right: 4%;
+    border-radius: 5px;
+    
+}
+
+h3{
+    width: 450px;
+    font-size: medium;
+}
+h2{
+    margin-left: 39%;
+    
+}
+h1{
+    text-align:center;
+    margin-top:0%;
+    background-color: #9FB3DF;
+    padding-bottom: 3%;
+}
+.pets{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom:2%;
+    display:inline-block;
+    padding-top: .5%;
+    padding-bottom: .5%;
+    padding-left: 1%;
+    padding-right: 1%;
+    background-color: #FFF1D5;
+    border-width:50px;
+    border-color:burlywood;
+
+    border-width: 50px;
+}
+.adopt_bttn{
+    margin-top: 5%;
+    margin-left:40%;
+    height: 30px;
+    width: 100px;
+}
+img{
+    margin-left:2%;
+    margin-right:2%;
+}

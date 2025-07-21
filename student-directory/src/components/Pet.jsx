@@ -1,43 +1,56 @@
 import { useState } from 'react'
 
 function Pet(desc){
-    let interest=5
     const [isAdopted,setAdopted]=useState(false)
-    const [interests,changeInterest]= useState(5)
-    {/*const [upinterest,moreInterest]=useState(+1)
-    const [downinterest,lessInterest]=useState(-1)*/}
-    
+    const [add_interest,addInterest]=useState(0)
+    const [dec_interest,decInterest]=useState(0)
+    let interest=add_interest + dec_interest;
 
     function Adopt(){
         setAdopted(!isAdopted)
     }
-    function changeInterest(){
-        if(desc.treats==true){
-            interests=moreInterest(+1)
-        }
-        else{
-        interests=lessInterest(downinterest)
-        }
+
+    if (add_interest>10){
+        addInterest(add_interest=10)
     }
     
+  /*  function Interests() {
+        if (desc.treats === true) {
+            addInterest(add_interest + 1);
+            console.log(desc.treats); 
+        } else {
+            decInterest(dec_interest - 1);
+            console.log(desc.treats); 
+        }
+    }
+*/
+    function moreInterest(){
+        addInterest(add_interest+1)
+    }
    return(
     <div className='pets'>
         <h2>{desc.nickname}</h2>
             <h3>Descritption: {desc.story}</h3>
-            <p>Attribute Options: Treats, Rubs, Patience {desc.treats}{desc.rubs}{desc.wait}</p>
+            
+            
             <img src={(desc.image)} alt='image of a pet'/>
+            <br></br>
 
-            <button onClick={changeInterest} className="trait_bttn"> Give Treats</button>
-
-            {interest>=7?(
-        <button onClick={Adopt} className="Adopt Button"> {isAdopted ? ' Adopted': 'Adopt' } </button>
+            <button onClick={moreInterest} className="trait_bttn"> Give Treats</button>
+            <button onClick={moreInterest} className="trait_bttn"> Gentle Rub </button>
+            <button onClick={moreInterest} ClassName="trait_bttn"> Wait </button>
+            <br></br>
+             {interest>=7?(
+        <button onClick={Adopt} className="adopt_bttn"> {isAdopted ? ' Adopted': 'Adopt' } </button>
         ):<p>Not eligible to adopt yet, try to build their interest</p>}
+            <p>Interest Level: {add_interest}/10</p>
         
             {/*<button onClick={Adopt} className="Adopt Button"> {isAdopted ? 'Not Adopted': 'A little bit more' } </button>*/}
     </div>
 
    )
-   
+   console.log(desc.treats)
 }
+
 
 export default Pet
